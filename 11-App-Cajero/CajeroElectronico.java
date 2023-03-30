@@ -63,6 +63,20 @@ public class CajeroElectronico{
 		}
 
 	}
+
+	
+
+
+	public void actualizasSaldoTarjeta(TarjetaDebito tarjeta, String clave){	
+		if ( tarjeta.verificarPassword(clave)) {
+			this.registrarLog("Este es su saldo Actual: ",tarjeta.getNumero(),tarjeta.getSaldo(), "OK:200");
+			System.out.println("==- Se Realizo Bien La Actualizacion -==");
+		}else{
+			this.registrarLog("Ingrese bien la contraseña: ",tarjeta.getNumero(),tarjeta.getSaldo(), "ERROR:404");
+			System.out.println("==- No Se Realizo Bien La Actualizacion -==");
+		}
+	}
+
 	public void nuevaPassword(TarjetaDebito tarjeta, String clave, String nuevaPassword){	
 
 		if ( tarjeta.verificarPassword(clave) ) {
