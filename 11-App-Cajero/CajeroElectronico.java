@@ -14,7 +14,7 @@ public class CajeroElectronico{
 	private String [] lista_transacciones;
 	private String user_admin;
 	private String clave_admin;
-	private String nuevaPassword;
+	
 
 	// Metodos
 	public CajeroElectronico(int tipo_lectura, int capacidad_total, int cant_dinero_disponible, int cant_10, int cant_20, int cant_50, int cant_100, String nombre_banco, String user_admin, String clave_admin){
@@ -63,13 +63,15 @@ public class CajeroElectronico{
 		}
 
 	}
-	public void nuevaPassword(){	
+	public void nuevaPassword(TarjetaDebito tarjeta, String clave, String nuevaPassword){	
 
-		if(nuevacontraseña != password){
-
-		System.out.println("Esta es su nueva contraseña: "+nuevaPassword);
-
+		if ( tarjeta.verificarPassword(clave) ) {
+			tarjeta.setPasword(nuevaPassword);
+			this.registrarLog("Esta es su nueva contraseña: ",tarjeta.getNumero(),0, "OK:200");
+		}else{
+			this.registrarLog("Ingrese bien la contraseña: ",tarjeta.getNumero(),0, "ERROR:404");
 		}
+		
 
 	}
 

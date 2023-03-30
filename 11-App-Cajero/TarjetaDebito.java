@@ -37,14 +37,9 @@ public class TarjetaDebito{
 		return this.numero;
 	}
 	
-	public String getpassword(){
-		return this.password;
+	public String setPasword(String nuevaPassword){
+		return this.password = nuevaPassword;
 	}
-
-	public void setpassword(){
-		this.password = password;
-	}
-
 
 	public boolean verificarPassword(String password){
 		return this.password.equals(password);
