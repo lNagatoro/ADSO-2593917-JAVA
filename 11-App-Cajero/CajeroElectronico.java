@@ -88,22 +88,22 @@ public class CajeroElectronico{
 					if ( this.cant_dinero_disponible >= valorConsigna ) {
 						if ( this.actualizarCantidadBilletes(valorConsigna) ) {
 							tarjeta.disminuirSaldo(valorConsigna);
-							this.cant_dinero_disponible -= valorConsigna;
+							this.cant_dinero_disponible += valorConsigna;
 							this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "OK:200");
 						}else{
-							this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error:No hay billetes suficientes para el monto solicitado.");
+							this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error:El monto el desmaciado.");
 						}
 					}else{
-						this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error: Dinero Cajero Insuficiente");
+						this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "OK: Has consignado");
 					}
 				}else{
-					this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error: Saldo Tarjeta Insuficiente");
+					this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "OK: Has consignado");
 				}
 			}else{
 				this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error: clave");
 			}
 		}else{
-			this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error: Valor debe ser multiplo de 10.000");
+			this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "OK: Has consignado");
 		}
 
 	}
