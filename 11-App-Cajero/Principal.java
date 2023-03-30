@@ -12,6 +12,7 @@ public class Principal{
 		cj_01.actualizasSaldoTarjeta(tj_01, "54321");
 		cj_01.retirarDineroTarjeta(tj_01, "54321", 780000);
 		cj_01.nuevaPassword(tj_01, "54321", "1234505");
+		cj_01.consignardineroTarjeta(tj_01, "1234505",5,10,15,20);
 		cj_01.imprimirDatosCajero();
 
 	

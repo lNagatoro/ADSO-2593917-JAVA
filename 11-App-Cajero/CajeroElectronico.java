@@ -14,6 +14,7 @@ public class CajeroElectronico{
 	private String [] lista_transacciones;
 	private String user_admin;
 	private String clave_admin;
+	private int valorConsigna;
 	
 
 	// Metodos
@@ -64,7 +65,51 @@ public class CajeroElectronico{
 
 	}
 
-	
+	public void consignardineroTarjeta(TarjetaDebito tarjeta, String clave, int cantD_10, int cantD_20, int cantD_50, int cantD_100){
+		int dolares_10 = cantD_10*10000;
+		int dolares_20 = cantD_20*20000;
+		int dolares_50 = cantD_50*50000;
+		int dolares_100 = cantD_100*100000;
+
+
+		this.cant_10 += cantD_10;
+		this.cant_20 += cantD_20;
+		this.cant_50 += cantD_50;
+		this.cant_100 += cantD_100;
+
+		this.valorConsigna = dolares_10+dolares_10+dolares_50+dolares_100;
+
+		if(this.valorConsigna%10000 == 0){
+			// Verificar clave
+			if ( tarjeta.verificarPassword(clave) ) {
+				// Verificar si la tarjeta tiene el dinero suficiente
+				if (tarjeta.getSaldo() >= valorConsigna) {
+					// Verificar si el cajero tiene el dinero suficiente
+					if ( this.cant_dinero_disponible >= valorConsigna ) {
+						if ( this.actualizarCantidadBilletes(valorConsigna) ) {
+							tarjeta.disminuirSaldo(valorConsigna);
+							this.cant_dinero_disponible -= valorConsigna;
+							this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "OK:200");
+						}else{
+							this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error:No hay billetes suficientes para el monto solicitado.");
+						}
+					}else{
+						this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error: Dinero Cajero Insuficiente");
+					}
+				}else{
+					this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error: Saldo Tarjeta Insuficiente");
+				}
+			}else{
+				this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error: clave");
+			}
+		}else{
+			this.registrarLog("RETIRO", tarjeta.getNumero(), valorConsigna, "Error: Valor debe ser multiplo de 10.000");
+		}
+
+	}
+
+
+
 
 
 	public void actualizasSaldoTarjeta(TarjetaDebito tarjeta, String clave){	
