@@ -5,7 +5,7 @@ public class Princial{
 
         System.out.print("  ====INCIAR JUEGO====  ");
         Triki juego = new Triki();
-        Triki.star();
+        juego.star();
         System.out.print("  ====CERRAR JUEGO====  ");
     }
 }
