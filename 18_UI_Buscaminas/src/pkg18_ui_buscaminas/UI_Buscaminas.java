@@ -142,8 +142,23 @@ public class UI_Buscaminas extends JFrame{
             img_blanco = img_blanco.getScaledInstance(20, 20, Image.SCALE_SMOOTH);
             this.tablero[fila][columna].setDisabledIcon( new ImageIcon(img_blanco) );
             this.tablero[fila][columna].setEnabled(false);
-                  
-                  //aingrsar codigoaa//
+                  //aaaaaa
+           
+           if(fila-1>= 0 && columna-1 >= 0 && tablero[fila-1][columna-1].isEnabled()){
+                destaparCasilla(fila-1,columna-1);
+            }
+            if(fila+1>= 0 && columna+1 >= 0 && tablero[fila+1][columna+1].isEnabled()){
+                destaparCasilla(fila+1,columna+1); 
+            }
+            if(fila-1>= 0 && columna+1 >= 0 && tablero[fila-1][columna+1].isEnabled()){
+                destaparCasilla(fila-1,columna+1); 
+            }
+            if(fila+1>= 0 && columna-1 >= 0 && tablero[fila+1][columna-1].isEnabled()){
+                destaparCasilla(fila-1,columna+1); 
+            }
+            if(this.minas != destaparCasilla){
+                
+            }
         }
         
         
@@ -155,6 +170,19 @@ public class UI_Buscaminas extends JFrame{
             this.tablero[fila][columna].setDisabledIcon( new ImageIcon(img_numero) );
             this.tablero[fila][columna].setEnabled(false);
             
+            if(fila-1>= 0 && columna-1 >= 0 && tablero[fila-1][columna-1].isEnabled()){
+                destaparCasilla(fila-1,columna-1);
+            }
+            if(fila+1>= 0 && columna+1 >= 0 && tablero[fila+1][columna+1].isEnabled()){
+                destaparCasilla(fila+1,columna+1); 
+            }
+            if(fila-1>= 0 && columna+1 >= 0 && tablero[fila-1][columna+1].isEnabled()){
+                destaparCasilla(fila-1,columna+1); 
+            }
+            if(fila+1>= 0 && columna-1 >= 0 && tablero[fila+1][columna-1].isEnabled()){
+                destaparCasilla(fila-1,columna+1); 
+            }
+            
         }
         
         // Es una mina
@@ -164,21 +192,13 @@ public class UI_Buscaminas extends JFrame{
             this.tablero[fila][columna].setDisabledIcon( new ImageIcon(img_bomba) );
             this.tablero[fila][columna].setEnabled(false);
 
-            // Completar Algoritmo
-            // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-            // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-            
-            
+                
+            //AAaaaaaa
         }
         
     }
     
-    public void destapar(int columna, int fila){
-        if(this.tablero_interno[fila+1][columna+1] < 9 && this.tablero_interno[fila-1][columna-1]==0){
-            destapar[fila][columna];
-        }
-    }
-    
+   
     public void crearTablero(){
         int contador = 0;
         while (contador<this.minas) {
@@ -249,3 +269,10 @@ public class UI_Buscaminas extends JFrame{
     }
     
 }
+
+
+
+
+
+
+
