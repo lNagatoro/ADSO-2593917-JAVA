@@ -282,25 +282,26 @@ public class EliminarUsuario extends javax.swing.JFrame {
         this.VentanaMenu.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
-
+    int posicioneliminar;
     private void bst_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bst_eliminarActionPerformed
-      
-
-        String cedula = campoCedula.getText();
+        this.VentanaMenu.listaPersonas[posicioneliminar]=null;
         
-        
-       this.campoCedula = this.VentanaMenu.getpersona();
-        for (int i = 0; i < indexPersona.size(); i++) {
-            Persona persona = listaPersonas.get(i);
-            if (persona.getCedula().equals(cedula)) {
-                listaPersonas.remove(i);
-            }
+        for(int i = posicioneliminar + 1;i < this.VentanaMenu.listaPersonas.length;i++){
+            this.VentanaMenu.listaPersonas[i-1] = this.VentanaMenu.listaPersonas[i];
         }
+        
+        campoNombre.setText("");
+        campoApellido.setText("");
+        campoTelefono.setText("");
+        campoDireccion.setText("");
+        campoCorreo.setText("");
+        
     }//GEN-LAST:event_bst_eliminarActionPerformed
 
     private void bst_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bst_buscarActionPerformed
         String buscarCedula = campoCedula.getText();
         for(int i = 0;i<this.VentanaMenu.listaPersonas.length;i--){
+            posicioneliminar = i;
             if(this.VentanaMenu.listaPersonas[i]!= null){
                 if(this.VentanaMenu.listaPersonas[i].getCedula().equals(buscarCedula)){
                     campoNombre.setText(this.VentanaMenu.listaPersonas[i].getNombre());

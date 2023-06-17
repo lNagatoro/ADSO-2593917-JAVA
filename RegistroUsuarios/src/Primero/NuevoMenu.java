@@ -3,9 +3,12 @@ package Primero;
 public class NuevoMenu extends javax.swing.JFrame {
     Persona listaPersonas [];
     int indexPersona;
+    
+    
     public NuevoMenu() {
         this.listaPersonas = new Persona [100];
         this.indexPersona = 0;
+      
         
         initComponents();
         initAlternComponents();
