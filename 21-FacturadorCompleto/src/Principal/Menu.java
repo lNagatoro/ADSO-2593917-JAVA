@@ -1,18 +1,21 @@
 package Principal;
 
 import Clases.DataBase;
-import ModuloUsuarios.CrearUsuario;
-import ModuloUsuarios.ListarUsuarios;
-import ModuloUsuarios.ModificarUsuario;
 import Clases.Persona;
 import Clases.Producto;
 import Clases.Factura;
+import ModuloUsuarios.CrearUsuario;
+import ModuloUsuarios.ListarUsuarios;
+import ModuloUsuarios.ModificarUsuario;
+
 import ModuloFacturas.CrearFactura;
 import ModuloFacturas.ListarFactura;
+
 import ModuloProductos.CrearProducto;
 import ModuloProductos.EliminarProducto;
 import ModuloProductos.ListarProductos;
 import ModuloProductos.ModificarProductos;
+
 import ModuloUsuarios.EliminarUsuario;
 import javax.swing.*;
 
