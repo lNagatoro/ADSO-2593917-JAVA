@@ -52,7 +52,7 @@ public class DataBase {
             if (registros.getRow()==1) {
                 int indice = 0;
                 do{
-                    Peliculas temp = new Peliculas( registros.getString("id"),registros.getString("nombre"), registros.getString("hora"), registros.getString("fecha") );
+                    Peliculas temp = new Peliculas( registros.getString("id"), registros.getString("imagen"),registros.getString("nombre"), registros.getString("precio"), registros.getString("fecha"), registros.getString("boleto") , registros.getString("genero"));
                     listaPel[indice] = temp;
                     indice++;
                 }while(registros.next());
@@ -116,8 +116,8 @@ public class DataBase {
         }
     }
     
-    public boolean insertarPelicula(String id, String nombre, String hora, String fecha){
-        String consulta = "INSERT INTO peliculas(id, nombre, hora, fecha, duracion) VALUES ('"+id+"','"+nombre+"','"+hora+"','"+fecha+"') ";    
+    public boolean insertarPelicula(String id, String imagen, String nombre, String precio,  String fecha, String boleto, String genero){
+        String consulta = "INSERT INTO peliculas(id, imagen, nombre, precio, fecha, boleto, genero) VALUES ('"+id+"','"+imagen+"','"+nombre+"','"+precio+"','"+fecha+"','"+boleto+"','"+genero+"') ";    
         try{
             int respuesta = manipularDB.executeUpdate(consulta);
             if (respuesta>0) {
@@ -246,13 +246,15 @@ public class DataBase {
          boolean respuesta = false;
             String id = peliculas.getId();
             String nombre = peliculas.getNombre();
-            String hora = peliculas.getHora();
+            String precio = peliculas.getPrecio();
             String fecha = peliculas.getFecha();
+            String boleto = peliculas.getBoleto();
+            String genero = peliculas.getGenero();
           
          
         
         try {
-            String consulta = "UPDATE peliculas SET nombre='"+nombre+"', hora='"+hora+"', fecha='"+fecha+"' WHERE id='"+id+"'";
+            String consulta = "UPDATE peliculas SET nombre='"+nombre+"', precio='"+precio+"', fecha='"+fecha+"', boleto='"+boleto+"', genero='"+genero+"' WHERE id='"+id+"'";
             int resp = manipularDB.executeUpdate(consulta);
             if (resp>0) {
                 respuesta = true;
@@ -284,7 +286,7 @@ public class DataBase {
             ResultSet registros = this.manipularDB.executeQuery("SELECT * FROM peliculas WHERE id='"+id+"' ");
             registros.next();
             if (registros.getRow()==1) {
-                temp = new Peliculas( registros.getString("id"),registros.getString("nombre"), registros.getString("hora"), registros.getString("fecha") );
+                temp = new Peliculas( registros.getString("id"),registros.getString("imagen"),registros.getString("nombre"), registros.getString("precio"), registros.getString("fecha"), registros.getString("boleto"), registros.getString("genero") );
             }
             return temp;
         }catch(SQLException e){

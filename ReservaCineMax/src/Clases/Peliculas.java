@@ -1,21 +1,28 @@
 package Clases;
 
+
+
    
 public class Peliculas{
         private String id;
+        private String imagen;
         private String nombre;
-        private String hora;
+        private String precio;
+    
         private String fecha;
-        
-        
-        public Peliculas(String id, String nombre, String hora, String fecha) {
-           this.id = id;
-           this.nombre = nombre;
-           this.hora = hora;
-           this.fecha = fecha;
-       
-                
-        }
+        private String boleto;
+        private String genero;
+
+    public Peliculas(String id, String imagen, String nombre, String precio, String fecha, String boleto, String genero) {
+        this.id = id;
+        this.imagen = imagen;
+        this.nombre = nombre;
+        this.precio = precio;
+     
+        this.fecha = fecha;
+        this.boleto = boleto;
+        this.genero = genero;
+    }
 
     public String getId() {
         return id;
@@ -23,6 +30,14 @@ public class Peliculas{
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public String getNombre() {
@@ -33,13 +48,15 @@ public class Peliculas{
         this.nombre = nombre;
     }
 
-    public String getHora() {
-        return hora;
+    public String getPrecio() {
+        return precio;
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
+
+   
 
     public String getFecha() {
         return fecha;
@@ -48,6 +65,26 @@ public class Peliculas{
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    public String getBoleto() {
+        return boleto;
+    }
+
+    public void setBoleto(String boleto) {
+        this.boleto = boleto;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+        
+        
+        
+  
 
   
         

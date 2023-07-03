@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2023 a las 03:28:07
+-- Tiempo de generación: 03-07-2023 a las 05:23:52
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -28,13 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `peliculas` (
-  `id` int(100) NOT NULL,
+  `id` int(200) NOT NULL,
+  `imagen` longblob NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `precio` int(100) NOT NULL,
-  `hora` int(100) NOT NULL,
-  `fecha` int(100) NOT NULL,
-  `duracion` int(100) NOT NULL
+  `fecha` varchar(200) NOT NULL,
+  `boleto` varchar(200) NOT NULL,
+  `genero` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `peliculas`
+--
+
+INSERT INTO `peliculas` (`id`, `imagen`, `nombre`, `precio`, `fecha`, `boleto`, `genero`) VALUES
+(1, 0x6a617661782e7377696e672e4a4c6162656c5b2c302c302c323730783338302c616c69676e6d656e74583d302e302c616c69676e6d656e74593d302e302c626f726465723d6a617661782e7377696e672e706c61662e73796e74682e53796e7468426f726465724035333239366231312c666c6167733d383338383630382c6d6178696d756d53697a653d2c6d696e696d756d53697a653d2c70726566657272656453697a653d2c64656661756c7449636f6e3d6a617661782e7377696e672e496d61676549636f6e4032373334643937652c64697361626c656449636f6e3d2c686f72697a6f6e74616c416c69676e6d656e743d4c454144494e472c686f72697a6f6e74616c54657874506f736974696f6e3d545241494c494e472c69636f6e546578744761703d342c6c6162656c466f723d2c746578743d2c766572746963616c416c69676e6d656e743d43454e5445522c766572746963616c54657874506f736974696f6e3d43454e5445525d, 'IRON MAN 3', 7000, 'Sun Jul 02 21:32:02 COT 2023', 'ADOLECENTE', 'ACCION');
 
 -- --------------------------------------------------------
 
@@ -60,7 +68,7 @@ CREATE TABLE `reservas` (
 --
 
 CREATE TABLE `usuarios` (
-  `cedula` int(100) NOT NULL,
+  `cedula` int(200) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `apellido` varchar(100) NOT NULL,
   `correo` varchar(100) NOT NULL,
@@ -72,10 +80,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`cedula`, `nombre`, `apellido`, `correo`, `telefono`) VALUES
-(1010, 'assad', 'sadas', 'dsad', 12131),
-(108800, 'saddfv', 'cxvxv', 'sadad@asdasd.com', 324343456),
-(2133, 'advfdv', 'fdgdg', 'gfdgd', 1112223334),
-(1010138856, 'Andres Felipe', 'Garcia', 'ag016498@gmail.com', 313579325);
+(0, 'assad', 'sadas', 'dsad', 12131),
+(0, 'advfdv', 'fdgdg', 'gfdgd', 1112223334),
+(0, 'saddfv', 'cxvxv', 'sadad@asdasd.com', 324343456),
+(0, 'Andres Felipe', 'Garcia', 'ag016498@gmail.com', 313579325);
 
 --
 -- Índices para tablas volcadas

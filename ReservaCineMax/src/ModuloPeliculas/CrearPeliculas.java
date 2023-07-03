@@ -3,14 +3,36 @@ package ModuloPeliculas;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import Clases.Peliculas;
+import Principal.Alert;
+import Principal.Menu;
+import java.awt.Color;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.util.Date;
 
 
 public class CrearPeliculas extends javax.swing.JFrame {
 
-  
-    public CrearPeliculas() {
+    Menu ventanaMenu;
+    Peliculas listaPel [];
+    
+    public CrearPeliculas(Menu ventanaMenu) {
+        this.ventanaMenu = ventanaMenu;
+        this.listaPel = listaPel;
+        
+        this.ventanaMenu.setVisible(false);
         initComponents();
+        initAlternComponents();
+        
+ 
+        
     }
 
     
@@ -22,18 +44,20 @@ public class CrearPeliculas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnImagen = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        campoPelicula = new javax.swing.JTextField();
+        btnAgregarImagen = new javax.swing.JButton();
+        campoPrecio = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        btnHora = new javax.swing.JTextField();
-        btnFEcha = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        campoPelicula = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        campoId = new javax.swing.JTextField();
+        campoGenero = new javax.swing.JTextField();
+        campoBoleto = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,7 +68,7 @@ public class CrearPeliculas extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("AGREGAR PELICULAS");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 19, 296, 29));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 0, 280, 29));
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -52,82 +76,100 @@ public class CrearPeliculas extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnImagen, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+            .addComponent(btnImagen, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnImagen, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+            .addComponent(btnImagen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 54, 296, 340));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 270, 380));
 
-        jTextField1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 6, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(618, 7, 46, 26));
-
-        jButton1.setBackground(new java.awt.Color(0, 204, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("AGREGAR IMAGEN DE LA PELICULA");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarImagen.setBackground(new java.awt.Color(0, 204, 204));
+        btnAgregarImagen.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnAgregarImagen.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarImagen.setText("AGREGAR IMAGEN DE LA PELICULA");
+        btnAgregarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarImagenActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 400, -1, -1));
+        jPanel1.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 300, -1));
+
+        campoPrecio.setBackground(new java.awt.Color(153, 153, 153));
+        campoPrecio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        campoPrecio.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 250, 30));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("PRECIO:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 86, 29));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("GENERO:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 86, 29));
+
+        btnAgregar.setBackground(new java.awt.Color(0, 204, 204));
+        btnAgregar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, -1, -1));
+
+        btnAtras.setBackground(new java.awt.Color(0, 204, 204));
+        btnAtras.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnAtras.setForeground(new java.awt.Color(255, 255, 255));
+        btnAtras.setText("ATRAS");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_camara5.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 120, 120));
 
         campoPelicula.setBackground(new java.awt.Color(153, 153, 153));
         campoPelicula.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         campoPelicula.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(campoPelicula, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 221, 256, 30));
+        jPanel1.add(campoPelicula, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 250, 30));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("NOMBRE:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 221, 86, 29));
+        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("ID:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 100, 30, 29));
 
-        btnHora.setBackground(new java.awt.Color(153, 153, 153));
-        btnHora.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnHora.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(btnHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 257, 256, 30));
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("BOLETO:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 86, 29));
 
-        btnFEcha.setBackground(new java.awt.Color(153, 153, 153));
-        btnFEcha.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btnFEcha.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(btnFEcha, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 293, 256, 30));
+        jLabel11.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("NOMBRE:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 86, 29));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("HORA:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 257, 86, 29));
+        campoId.setBackground(new java.awt.Color(153, 153, 153));
+        campoId.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        campoId.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoId, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 80, 30));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("FECHA:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 293, 86, 29));
+        campoGenero.setBackground(new java.awt.Color(153, 153, 153));
+        campoGenero.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        campoGenero.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 250, 30));
 
-        jButton2.setBackground(new java.awt.Color(0, 204, 204));
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("AGREGAR");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(532, 335, -1, -1));
-
-        jButton3.setBackground(new java.awt.Color(0, 204, 204));
-        jButton3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("ATRAS");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(647, 400, -1, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono_camara5.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 75, -1, -1));
+        campoBoleto.setBackground(new java.awt.Color(153, 153, 153));
+        campoBoleto.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        campoBoleto.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoBoleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 222, 250, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondeiro.jpg"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 440));
@@ -136,9 +178,7 @@ public class CrearPeliculas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,7 +188,7 @@ public class CrearPeliculas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAgregarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarImagenActionPerformed
         String Ruta = "";
         
         JFileChooser jFileChooser = new JFileChooser();
@@ -159,33 +199,97 @@ public class CrearPeliculas extends javax.swing.JFrame {
         
         if(respuesta == JFileChooser.APPROVE_OPTION){
             Ruta = jFileChooser.getSelectedFile().getPath();
-            
             Image btnImagen = new ImageIcon(Ruta).getImage();
             ImageIcon mIcono = new ImageIcon(btnImagen.getScaledInstance(this.btnImagen.getWidth(), this.btnImagen.getHeight(), Image.SCALE_SMOOTH));
             
             this.btnImagen.setIcon(mIcono);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAgregarImagenActionPerformed
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        String id = campoId.getText();
+        String imagen = btnImagen.toString();
+        String nombre = campoPelicula.getText();
+        String precio = campoPrecio.getText();    
+        String genero = campoGenero.getText();
+        String boleto = campoBoleto.getText();
+        Date fecha = new Date();
+	String log = fecha.toString();
+        
+        if (!id.equals("") && !imagen.equals("") && !nombre.equals("") && !precio.equals("") && !log.equals("") && !boleto.equals("") && !genero.equals("")) {
+            boolean repetido = false;
+            if (!repetido) {
+
+                boolean proceso = this.ventanaMenu.database.insertarPelicula(id, imagen, nombre, precio, log, boleto, genero);
+
+                this.ventanaMenu.setVisible(true);
+                this.ventanaMenu.alertCreacionUsuario();
+                dispose();
+            }else{
+                Alert alerta = new Alert("CODIGO", "El codigo ingresado se encuentra repetido.", "error");
+            }
+        }else{
+            Alert alerta = new Alert("Datos Inválidos", "Todos los campos son obligatorios.", "error");
+            validarTodosInputs();
+        }
+        
+        
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        this.ventanaMenu.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAtrasActionPerformed
+    
+     public void validarTodosInputs(){
+        validarInput(campoId);
+        validarInput(campoPelicula);
+        validarInput(campoPrecio);
+        validarInput(campoGenero);
+        
+    }
+    
+    public void validarInput(JTextField campo){
+        if (campo.getText().equals("")) {
+            Border borderColor = new LineBorder(Color.RED, 1, true);
+            Border borderPadding = new EmptyBorder(2,5,2,5);
+            Border borderRojo = new CompoundBorder(borderColor, borderPadding);
+            campo.setBorder(borderRojo);
+            campo.requestFocus();
+        }else{
+            JTextField referencia = new JTextField();
+            campo.setBorder( referencia.getBorder() );
+        }
+    }
+    
+    public void initAlternComponents(){
+        setLocationRelativeTo(null);
+        setIconImage( getToolkit().createImage( ClassLoader.getSystemResource("imagenes/icono_creacionusuario.png") ) );
+    }
+    
+    
+    
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField btnFEcha;
-    private javax.swing.JTextField btnHora;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnAgregarImagen;
+    private javax.swing.JButton btnAtras;
     private javax.swing.JLabel btnImagen;
+    private javax.swing.JTextField campoBoleto;
+    private javax.swing.JTextField campoGenero;
+    private javax.swing.JTextField campoId;
     private javax.swing.JTextField campoPelicula;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField campoPrecio;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -32,7 +32,7 @@ public class ListarPeliculas extends javax.swing.JFrame {
         if (listaPel!=null) {
             for(int i = 0; i < listaPel.length; i++){
                 if(listaPel[i] != null){
-                    etqTemporal = new JLabel(listaPel[i].getId()+" - "+listaPel[i].getNombre()+" "+listaPel[i].getHora()+" - "+listaPel[i].getFecha());
+                    etqTemporal = new JLabel(listaPel[i].getId()+" - "+listaPel[i].getNombre()+" - "+listaPel[i].getFecha()+" - "+listaPel[i].getBoleto()+" - "+listaPel[i].getImagen());
                     etqTemporal.setFont(new Font("Arial", Font.PLAIN, 12));
                     etqTemporal.setBorder(new EmptyBorder(2,10,2,10));
                     contenUsuarios.add(etqTemporal);
@@ -43,6 +43,7 @@ public class ListarPeliculas extends javax.swing.JFrame {
             revalidate();
         }
     }
+   
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -71,7 +72,7 @@ public class ListarPeliculas extends javax.swing.JFrame {
         contenUsuarios.setLayout(contenUsuariosLayout);
         contenUsuariosLayout.setHorizontalGroup(
             contenUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 448, Short.MAX_VALUE)
         );
         contenUsuariosLayout.setVerticalGroup(
             contenUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,7 +81,7 @@ public class ListarPeliculas extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(contenUsuarios);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 400, 350));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 460, 350));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -91,17 +92,19 @@ public class ListarPeliculas extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 100, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 100, 40));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/otromas.jpg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 490));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 490));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

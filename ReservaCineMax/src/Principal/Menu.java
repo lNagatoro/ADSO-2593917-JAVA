@@ -84,7 +84,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("CLIENTES");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 180, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, -1));
 
         jPanel6.setBackground(new java.awt.Color(0, 0, 0));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -92,20 +92,10 @@ public class Menu extends javax.swing.JFrame {
         hacerReserva.setBackground(new java.awt.Color(255, 0, 0));
         hacerReserva.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         hacerReserva.setText("HACER RESERVAR");
-        hacerReserva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hacerReservaActionPerformed(evt);
-            }
-        });
 
         eliminarReserva.setBackground(new java.awt.Color(255, 0, 0));
         eliminarReserva.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         eliminarReserva.setText("ELIMINAR RESERVA");
-        eliminarReserva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarReservaActionPerformed(evt);
-            }
-        });
 
         listaReserva.setBackground(new java.awt.Color(255, 0, 0));
         listaReserva.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -140,7 +130,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
         );
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, -1, -1));
 
         jPanel5.setBackground(new java.awt.Color(0, 0, 0));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -208,20 +198,20 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 69)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CINEMA");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 320, 100));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 320, 100));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PELICULAS");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 180, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 180, -1));
 
         jPanel7.setBackground(new java.awt.Color(0, 0, 0));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -289,14 +279,14 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("RESERVAS");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 190, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 190, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondonumero2.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -367,21 +357,21 @@ public class Menu extends javax.swing.JFrame {
 
     private void crearPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearPeliculaActionPerformed
         setVisible(false);
-        CrearPeliculas ventana = new CrearPeliculas();
+        CrearPeliculas ventana = new CrearPeliculas(this);
         ventana.setVisible(true);
     }//GEN-LAST:event_crearPeliculaActionPerformed
 
+    private void modificarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPeliculaActionPerformed
+        setVisible(false);
+        ModificarPeliculas ventana = new ModificarPeliculas(this);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_modificarPeliculaActionPerformed
+
     private void eliminarPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPeliculasActionPerformed
         setVisible(false);
-        ListarPeliculas ventana = new ListarPeliculas(this);
+        EliminarPeliculas ventana = new EliminarPeliculas(this);
         ventana.setVisible(true);
     }//GEN-LAST:event_eliminarPeliculasActionPerformed
-
-    private void hacerReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hacerReservaActionPerformed
-        setVisible(false);
-        CrearReserva ventana = new CrearReserva();
-        ventana.setVisible(true);
-    }//GEN-LAST:event_hacerReservaActionPerformed
 
     private void listaPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaPeliculasActionPerformed
         setVisible(false);
@@ -389,20 +379,38 @@ public class Menu extends javax.swing.JFrame {
         ventana.setVisible(true);
     }//GEN-LAST:event_listaPeliculasActionPerformed
 
-    private void modificarPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPeliculaActionPerformed
-        setVisible(false);
-        ModificarPeliculas ventana = new ModificarPeliculas();
-        ventana.setVisible(true);
-    }//GEN-LAST:event_modificarPeliculaActionPerformed
-
-    private void eliminarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarReservaActionPerformed
-        setVisible(false);
-        EliminarReserva ventana = new EliminarReserva(this);
-        ventana.setVisible(true);
-    }//GEN-LAST:event_eliminarReservaActionPerformed
-
    
-   
+    public static void main(String args[]) {
+        
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+      
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Menu().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton crearPelicula;

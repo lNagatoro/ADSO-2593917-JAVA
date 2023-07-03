@@ -275,7 +275,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
     
     public void initAlternComponents(){
         setLocationRelativeTo(null);
-        setIconImage( getToolkit().createImage( ClassLoader.getSystemResource("imagenes/eliminar4.png") ) );
+        setIconImage( getToolkit().createImage( ClassLoader.getSystemResource("imagenes/icono_almacenes.png") ) );
         
         deshabilitarCampo(campoNombre);
         deshabilitarCampo(campoApellido);

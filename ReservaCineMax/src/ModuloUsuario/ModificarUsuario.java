@@ -178,8 +178,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
             campoApellido.setText("");
             campoCorreo.setText("");
             campoTelefono.setText("");
-            
-       
+          
             campoCedula.requestFocus();
             btnModificar.setEnabled(false);
         }
@@ -214,14 +213,19 @@ public class ModificarUsuario extends javax.swing.JFrame {
         campo.setEnabled(true);
         campo.setBackground(Color.WHITE );
     }
-   
+    public void deshabilitarCampo(JTextField campo){
+        JTextField referencia = new JTextField();
+        campo.setBorder( referencia.getBorder() );
+        campo.setEnabled(false);
+        campo.setBackground(Color.GRAY );
+    }
     
     
     public void initAlternComponents(){
         setLocationRelativeTo(null);
         setIconImage( getToolkit().createImage( ClassLoader.getSystemResource("imagenes/icono_modificar_usuario.png") ) );
         
-       
+
     }
     
     public void validarTodosInputs(){
