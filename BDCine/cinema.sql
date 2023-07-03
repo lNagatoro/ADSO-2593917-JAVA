@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-07-2023 a las 05:23:52
+-- Tiempo de generación: 03-07-2023 a las 08:25:57
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -69,6 +69,7 @@ CREATE TABLE `reservas` (
 
 CREATE TABLE `usuarios` (
   `cedula` int(200) NOT NULL,
+  `contra` int(200) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `apellido` varchar(100) NOT NULL,
   `correo` varchar(100) NOT NULL,
@@ -79,11 +80,8 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`cedula`, `nombre`, `apellido`, `correo`, `telefono`) VALUES
-(0, 'assad', 'sadas', 'dsad', 12131),
-(0, 'advfdv', 'fdgdg', 'gfdgd', 1112223334),
-(0, 'saddfv', 'cxvxv', 'sadad@asdasd.com', 324343456),
-(0, 'Andres Felipe', 'Garcia', 'ag016498@gmail.com', 313579325);
+INSERT INTO `usuarios` (`cedula`, `contra`, `nombre`, `apellido`, `correo`, `telefono`) VALUES
+(1010138856, 1010, 'Andres Felipe', 'Garcia Rodriguez', 'ag016498@gmail.com', 313579326);
 
 --
 -- Índices para tablas volcadas

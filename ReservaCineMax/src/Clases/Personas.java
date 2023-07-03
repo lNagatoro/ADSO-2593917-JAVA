@@ -2,13 +2,15 @@ package Clases;
 
 public class Personas {
         private String cedula;
+        private String contra;
         private String nombre;
         private String apellido;
         private String correo;
         private String telefono;
 
-        public Personas(String cedula, String nombre, String apellido, String correo, String telefono) {
+        public Personas(String cedula, String contra, String nombre, String apellido, String correo, String telefono) {
             this.cedula = cedula;
+            this.contra = contra;
             this.nombre = nombre;
             this.apellido = apellido;
             this.correo = correo;
@@ -21,6 +23,14 @@ public class Personas {
 
     public void setCedula(String cedula) {
         this.cedula = cedula;
+    }
+    
+    public String getContra() {
+        return contra;
+    }
+
+    public void setContra(String contra) {
+        this.contra = contra;
     }
 
     public String getNombre() {

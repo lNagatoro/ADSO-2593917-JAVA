@@ -47,6 +47,8 @@ public class EliminarUsuario extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        campoContra = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,7 +58,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
         campoCedula.setBackground(new java.awt.Color(204, 204, 204));
         campoCedula.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         campoCedula.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(campoCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 260, 30));
+        jPanel1.add(campoCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 260, 30));
 
         btnBuscarCedula.setBackground(new java.awt.Color(0, 0, 0));
         btnBuscarCedula.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -67,57 +69,57 @@ public class EliminarUsuario extends javax.swing.JFrame {
                 btnBuscarCedulaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, 30));
+        jPanel1.add(btnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, -1, 30));
 
         campoTelefono.setBackground(new java.awt.Color(204, 204, 204));
         campoTelefono.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         campoTelefono.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(campoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 260, 30));
+        jPanel1.add(campoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 260, 30));
 
         campoApellido.setBackground(new java.awt.Color(204, 204, 204));
         campoApellido.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         campoApellido.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(campoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 260, 30));
+        jPanel1.add(campoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 260, 30));
 
         campoCorreo.setBackground(new java.awt.Color(204, 204, 204));
         campoCorreo.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         campoCorreo.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(campoCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 260, 30));
+        jPanel1.add(campoCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 260, 30));
 
         campoNombre.setBackground(new java.awt.Color(204, 204, 204));
         campoNombre.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         campoNombre.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(campoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(381, 160, 260, 30));
+        jPanel1.add(campoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 260, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("APELLIDO:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 209, 100, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 110, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("CORREO:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 100, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 110, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("NOMBRE:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 159, 100, 30));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 110, 30));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("TELEFONO:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 309, 100, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 110, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ELIMINAR USUARIO");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 260, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 260, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CEDULA:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 100, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 110, 30));
 
         btnEliminarUsuario.setBackground(new java.awt.Color(0, 0, 0));
         btnEliminarUsuario.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -128,7 +130,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
                 btnEliminarUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 110, 30));
+        jPanel1.add(btnEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 110, 40));
 
         jPanel2.setBackground(new java.awt.Color(0, 161, 174));
 
@@ -150,7 +152,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,6 +176,16 @@ public class EliminarUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(571, 446, 100, 40));
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("CONTRASEÑA:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 110, 30));
+
+        campoContra.setBackground(new java.awt.Color(204, 204, 204));
+        campoContra.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        campoContra.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 260, 30));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondonumero6.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 490));
 
@@ -193,14 +205,15 @@ public class EliminarUsuario extends javax.swing.JFrame {
 
     private void btnEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUsuarioActionPerformed
         String cedula = campoCedula.getText();
+        String contra = campoContra.getText();  
         String nombre = campoNombre.getText();
         String apellido = campoApellido.getText();
         String correo = campoCorreo.getText();
         String telefono = campoTelefono.getText();
 
-        Personas temporal = new Personas(cedula, nombre, apellido, correo, telefono);
+        Personas temporal = new Personas(cedula, contra, nombre, apellido, correo, telefono);
 
-        if (!cedula.equals("") && !nombre.equals("") && !apellido.equals("") && !correo.equals("") && !telefono.equals("")) {
+        if (!cedula.equals("")  && !contra.equals("") && !nombre.equals("") && !apellido.equals("") && !correo.equals("") && !telefono.equals("")) {
             boolean proceso = this.ventanaMenu.database.eliminarUsuario(temporal);
             Alert alerta = new Alert("EXITO", "Usuario eliminado correctamente.", "success");
         }else{
@@ -208,13 +221,13 @@ public class EliminarUsuario extends javax.swing.JFrame {
             validarTodosInputs();
         }
         
-       
+        campoContra.setText("");
         campoNombre.setText("");
         campoApellido.setText("");
         campoCorreo.setText("");
         campoTelefono.setText("");
         
- 
+        campoContra.setEnabled(true);
         campoNombre.setEnabled(true);
         campoApellido.setEnabled(true);
         campoCorreo.setEnabled(true);
@@ -229,23 +242,28 @@ public class EliminarUsuario extends javax.swing.JFrame {
 
         if (temporal != null) {
             habilitarCampo(campoNombre);
+            habilitarCampo(campoContra);
             habilitarCampo(campoApellido);
             habilitarCampo(campoCorreo);
             habilitarCampo(campoTelefono);
-         
+            
+            campoContra.setText(temporal.getContra());
             campoNombre.setText(temporal.getNombre());
             campoApellido.setText(temporal.getApellido());
             campoCorreo.setText(temporal.getCorreo());
             campoTelefono.setText(temporal.getTelefono());
+            
             campoNombre.requestFocus();
             btnEliminarUsuario.setEnabled(true);
         }else{
             Alert alerta = new Alert("NO EXISTE", "La cedula no esta registrada.", "error");
+            campoContra.setText("");
             campoNombre.setText("");
             campoApellido.setText("");
             campoCorreo.setText("");
             campoTelefono.setText("");
-           
+            
+            deshabilitarCampo(campoContra);
             deshabilitarCampo(campoNombre);
             deshabilitarCampo(campoApellido);
             deshabilitarCampo(campoCorreo);
@@ -277,6 +295,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setIconImage( getToolkit().createImage( ClassLoader.getSystemResource("imagenes/icono_almacenes.png") ) );
         
+        deshabilitarCampo(campoContra);
         deshabilitarCampo(campoNombre);
         deshabilitarCampo(campoApellido);
         deshabilitarCampo(campoCorreo);
@@ -284,7 +303,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
     }
     
     public void validarTodosInputs(){
-       
+        validarInput(campoContra);
         validarInput(campoNombre);
         validarInput(campoApellido);
         validarInput(campoCorreo);
@@ -308,11 +327,13 @@ public class EliminarUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarUsuario;
     private javax.swing.JTextField campoApellido;
     private javax.swing.JTextField campoCedula;
+    private javax.swing.JTextField campoContra;
     private javax.swing.JTextField campoCorreo;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoTelefono;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -32,7 +32,7 @@ public class DataBase {
             if (registros.getRow()==1) {
                 int indice = 0;
                 do{
-                    Personas temp = new Personas( registros.getString("cedula"),registros.getString("nombre"), registros.getString("apellido"), registros.getString("correo"), registros.getString("telefono") );
+                    Personas temp = new Personas( registros.getString("cedula") ,registros.getString("contra") ,registros.getString("nombre"), registros.getString("apellido"), registros.getString("correo"), registros.getString("telefono") );
                     listaPersonas[indice] = temp;
                     indice++;
                 }while(registros.next());
@@ -84,8 +84,8 @@ public class DataBase {
         }
     }
     
-    public boolean insertarUsuario(String cedula, String nombre, String apellido, String correo, String telefono){
-        String consulta = "INSERT INTO usuarios (cedula, nombre, apellido, correo, telefono) VALUES ('"+cedula+"','"+nombre+"','"+apellido+"','"+correo+"','"+telefono+"') ";    
+    public boolean insertarUsuario(String cedula, String contra, String nombre, String apellido, String correo, String telefono){
+        String consulta = "INSERT INTO usuarios (cedula, contra, nombre, apellido, correo, telefono) VALUES ('"+cedula+"','"+contra+"','"+nombre+"','"+apellido+"','"+correo+"','"+telefono+"') ";    
         try{
             int respuesta = manipularDB.executeUpdate(consulta);
             if (respuesta>0) {
@@ -201,6 +201,7 @@ public class DataBase {
     public boolean editarUsuario(Personas personas){
         boolean respuesta = false;
         String cedula = personas.getCedula();
+        String contra = personas.getContra();
         String nombre = personas.getNombre();
         String apellido = personas.getApellido();
         String correo = personas.getCorreo();
@@ -208,7 +209,7 @@ public class DataBase {
        
         
         try {
-            String consulta = "UPDATE usuarios SET nombre='"+nombre+"', apellido='"+apellido+"', correo='"+correo+"', telefono='"+telefono+"' WHERE cedula='"+cedula+"'";
+            String consulta = "UPDATE usuarios SET contra='"+contra+"', nombre='"+nombre+"', apellido='"+apellido+"', correo='"+correo+"', telefono='"+telefono+"' WHERE cedula='"+cedula+"'";
             int resp = manipularDB.executeUpdate(consulta);
             if (resp>0) {
                 respuesta = true;
@@ -271,7 +272,7 @@ public class DataBase {
             ResultSet registros = this.manipularDB.executeQuery("SELECT * FROM usuarios WHERE cedula='"+cedula+"' ");
             registros.next();
             if (registros.getRow()==1) {
-                temp = new Personas( registros.getString("cedula"),registros.getString("nombre"), registros.getString("apellido"), registros.getString("correo"), registros.getString("telefono") );
+                temp = new Personas( registros.getString("cedula"),registros.getString("contra"),registros.getString("nombre"), registros.getString("apellido"), registros.getString("correo"), registros.getString("telefono") );
             }
             return temp;
         }catch(SQLException e){
