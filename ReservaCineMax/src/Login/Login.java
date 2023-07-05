@@ -102,7 +102,7 @@ public class Login extends javax.swing.JFrame {
         if(cedula.isEmpty() || contra.isEmpty()){
             Alert alerta = new Alert("INCORRECTO","Rellene Todos Los Campos.", "success");
         }else{
-            if(cedula.equals("1010138856") && contra.equals("1010")){
+            if(cedula.equals("12345") && contra.equals("12345")){
                 
                 Alert alerta = new Alert("","Bienvenido.", "success");
                 setVisible(false);

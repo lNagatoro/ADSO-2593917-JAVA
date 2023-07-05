@@ -72,7 +72,7 @@ public class DataBase {
             if (registros.getRow()==1) {
                 int indice = 0;
                 do{
-                    Reserva temp = new Reserva( registros.getString("cedula_usuario"),registros.getString("nom_usuario"), registros.getString("nom_pelicula"), registros.getString("precio"), registros.getString("hora"), registros.getString("fecha"), registros.getString("sala"), registros.getString("puesto") );
+                    Reserva temp = new Reserva( registros.getString("cedula_usuario"),registros.getString("nom_usuario"), registros.getString("ape_usuario"),registros.getString("correo"),registros.getString("telefono"), registros.getString("nom_pelicula"), registros.getString("precio"), registros.getString("fecha"), registros.getString("puesto") );
                     listaReset[indice] = temp;
                     indice++;
                 }while(registros.next());
@@ -100,8 +100,8 @@ public class DataBase {
         }
     }
     
-    public boolean insertarReserva(String cedula_usuario, String nom_usuario, String nom_pelicula, String precio, String hora, String fecha, String sala, String puesto){
-        String consulta = "INSERT INTO reservas(cedula_usuario, nom_usuario, nom_pelicula, precio, hora, fecha, sala, puesto) VALUES ('"+cedula_usuario+"','"+nom_usuario+"','"+nom_pelicula+"','"+precio+"','"+hora+"','"+fecha+"','"+sala+"','"+puesto+"') ";    
+    public boolean insertarReserva(String cedula_usuario, String nom_usuario, String ape_usuario, String correo, String telefono, String nom_pelicula, String precio, String fecha, String puesto){
+        String consulta = "INSERT INTO reservas(cedula_usuario, nom_usuario, ape_usuario, correo, telefono, nom_pelicula, precio, fecha, puesto) VALUES ('"+cedula_usuario+"','"+nom_usuario+"', '"+ape_usuario+"',  '"+correo+"',  '"+telefono+"','"+nom_pelicula+"','"+precio+"','"+fecha+"','"+puesto+"') ";    
         try{
             int respuesta = manipularDB.executeUpdate(consulta);
             if (respuesta>0) {
@@ -219,29 +219,6 @@ public class DataBase {
         }
         return respuesta;
     }
-       
-    public boolean editarReserva(Reserva reserva){
-         boolean respuesta = false;
-            String cedula_usuario = reserva.getCedula_usuario();
-            String nom_usuario = reserva.getNom_usuario();
-            String nom_pelicula = reserva.getNom_pelicula();
-            String precio = reserva.getPrecio();
-            String hora = reserva.getHora();
-            String fecha = reserva.getFecha();
-            String sala = reserva.getSala();
-            String puesto = reserva.getPuesto();
-        
-        try {
-            String consulta = "UPDATE reservas SET nom_usuario='"+nom_usuario+"', nom_pelicula='"+nom_pelicula+"', precio='"+precio+"', hora='"+hora+"', fecha='"+fecha+"', sala='"+sala+"', puesto='"+puesto+"' WHERE cedula_usuario='"+cedula_usuario+"'";
-            int resp = manipularDB.executeUpdate(consulta);
-            if (resp>0) {
-                respuesta = true;
-            }
-        } catch (SQLException e) {
-            System.out.println("Error en UPDATE: "+e.getMessage());
-        }
-        return respuesta;
-    }
     
     public boolean editarPelicula(Peliculas peliculas){
          boolean respuesta = false;
@@ -303,7 +280,8 @@ public class DataBase {
             ResultSet registros = this.manipularDB.executeQuery("SELECT * FROM reservas WHERE cedula_usuario='"+cedula_usuario+"' ");
             registros.next();
             if (registros.getRow()==1) {
-                temp = new Reserva( registros.getString("cedula_usuario"),registros.getString("nom_usuario"), registros.getString("nom_pelicula"), registros.getString("precio"), registros.getString("hora"), registros.getString("fecha"), registros.getString("sala"), registros.getString("puesto") );
+                temp = new Reserva( registros.getString("cedula_usuario"),registros.getString("nom_usuario"), registros.getString("ape_usuario"),registros.getString("correo"),registros.getString("telefono"),registros.getString("nom_pelicula"), registros.getString("precio"), registros.getString("fecha"), registros.getString("puesto") );
+                
             }
             return temp;
         }catch(SQLException e){

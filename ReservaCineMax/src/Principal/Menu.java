@@ -93,6 +93,11 @@ public class Menu extends javax.swing.JFrame {
         eliminarReserva.setBackground(new java.awt.Color(255, 0, 0));
         eliminarReserva.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         eliminarReserva.setText("ELIMINAR RESERVA");
+        eliminarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarReservaActionPerformed(evt);
+            }
+        });
 
         eliminarPeliculas.setBackground(new java.awt.Color(255, 0, 0));
         eliminarPeliculas.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -177,6 +182,11 @@ public class Menu extends javax.swing.JFrame {
         hacerReserva.setBackground(new java.awt.Color(255, 0, 0));
         hacerReserva.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         hacerReserva.setText("CREAR RESERVAR");
+        hacerReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hacerReservaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -377,6 +387,18 @@ public class Menu extends javax.swing.JFrame {
         this.ventanaLogin.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
+    private void eliminarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarReservaActionPerformed
+        setVisible(false);
+        EliminarReserva ventana = new EliminarReserva(this);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_eliminarReservaActionPerformed
+
+    private void hacerReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hacerReservaActionPerformed
+        setVisible(false);
+        CrearReserva ventana = new CrearReserva(this);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_hacerReservaActionPerformed
 
    
     

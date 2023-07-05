@@ -34,7 +34,7 @@ public class ListarReserva extends javax.swing.JFrame {
         if (listaReset!=null) {
             for(int i = 0; i < listaReset.length; i++){
                 if(listaReset[i] != null){
-                    etqTemporal = new JLabel(listaReset[i].getCedula_usuario()+" - "+listaReset[i].getNom_usuario()+" "+listaReset[i].getNom_pelicula()+" - "+listaReset[i].getHora()+" - "+listaReset[i].getFecha()+" - "+listaReset[i].getSala()+" - "+listaReset[i].getPuesto());
+                    etqTemporal = new JLabel(listaReset[i].getCedula_usuario()+" - "+listaReset[i].getNom_usuario()+" - "+listaReset[i].getNom_pelicula()+" - "+listaReset[i].getFecha()+" - "+listaReset[i].getPuesto());
                     etqTemporal.setFont(new Font("Arial", Font.PLAIN, 12));
                     etqTemporal.setBorder(new EmptyBorder(2,10,2,10));
                     contenUsuarios.add(etqTemporal);
