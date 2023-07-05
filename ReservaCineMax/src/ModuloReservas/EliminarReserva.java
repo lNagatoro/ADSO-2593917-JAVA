@@ -37,11 +37,8 @@ public class EliminarReserva extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        campoSala = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         campoPuesto = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         campoCedula = new javax.swing.JTextField();
         btnEliminarUsuario = new javax.swing.JButton();
@@ -57,7 +54,6 @@ public class EliminarReserva extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         campoTelefono = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        campoId = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -80,7 +76,7 @@ public class EliminarReserva extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 28)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ELIMINAR RESERVA");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 420, 50));
@@ -97,35 +93,17 @@ public class EliminarReserva extends javax.swing.JFrame {
         jLabel2.setText("NOMBRES:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 30));
 
-        campoSala.setBackground(new java.awt.Color(204, 204, 204));
-        campoSala.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        campoSala.setForeground(new java.awt.Color(0, 0, 0));
-        campoSala.setMinimumSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(campoSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 200, 30));
-
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("PELICULA:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 80, 30));
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("SALA:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 80, 30));
-
         campoPuesto.setBackground(new java.awt.Color(204, 204, 204));
         campoPuesto.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         campoPuesto.setForeground(new java.awt.Color(0, 0, 0));
         campoPuesto.setMinimumSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(campoPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 210, 30));
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("ID:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 80, 30));
+        jPanel1.add(campoPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 200, 30));
 
         btnAtras.setBackground(new java.awt.Color(0, 0, 0));
         btnAtras.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -136,7 +114,7 @@ public class EliminarReserva extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, 100, 30));
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 100, 30));
 
         campoCedula.setBackground(new java.awt.Color(204, 204, 204));
         campoCedula.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -151,7 +129,7 @@ public class EliminarReserva extends javax.swing.JFrame {
                 btnEliminarUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, 30));
+        jPanel1.add(btnEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, 30));
 
         campoNombre.setBackground(new java.awt.Color(204, 204, 204));
         campoNombre.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -228,22 +206,16 @@ public class EliminarReserva extends javax.swing.JFrame {
         jLabel13.setText("TELEFONO:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, 30));
 
-        campoId.setBackground(new java.awt.Color(204, 204, 204));
-        campoId.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        campoId.setForeground(new java.awt.Color(0, 0, 0));
-        campoId.setMinimumSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(campoId, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 200, 30));
-
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("N° PUESTO:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 90, 30));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondonumero3.jpg"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo_de_eleminar.jpg"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 640, 390));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -253,7 +225,10 @@ public class EliminarReserva extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -294,7 +269,6 @@ public class EliminarReserva extends javax.swing.JFrame {
         campoCorreo.setText("");
         campoTelefono.setText("");
         campoFecha.setText("");
-        campoSala.setText("");
         campoPuesto.setText("");
         
  
@@ -305,7 +279,6 @@ public class EliminarReserva extends javax.swing.JFrame {
         campoCorreo.setEnabled(true);
         campoTelefono.setEnabled(true);
         campoFecha.setEnabled(true);
-        campoSala.setEnabled(true);
         campoPuesto.setEnabled(true);
 
         btnEliminarUsuario.setText("Reserva Eliminada");
@@ -347,7 +320,6 @@ public class EliminarReserva extends javax.swing.JFrame {
             campoCorreo.setText("");
             campoTelefono.setText("");
             campoFecha.setText("");
-            campoSala.setText("");
             campoPuesto.setText("");
         
            
@@ -424,12 +396,10 @@ public class EliminarReserva extends javax.swing.JFrame {
     private javax.swing.JTextField campoCedula;
     private javax.swing.JTextField campoCorreo;
     private javax.swing.JTextField campoFecha;
-    private javax.swing.JTextField campoId;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoPelicula;
     private javax.swing.JTextField campoPrecio;
     private javax.swing.JTextField campoPuesto;
-    private javax.swing.JTextField campoSala;
     private javax.swing.JTextField campoTelefono;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -438,8 +408,6 @@ public class EliminarReserva extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
