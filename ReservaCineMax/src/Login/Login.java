@@ -96,23 +96,28 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        String cedula = btnUsuario.getText();
+        String correo = btnUsuario.getText();
         String contra = btnContraseña.getText();
-
-        if(cedula.isEmpty() || contra.isEmpty()){
-            Alert alerta = new Alert("INCORRECTO","Rellene Todos Los Campos.", "success");
-        }else{
-            if(cedula.equals("12345") && contra.equals("12345")){
-                
-                Alert alerta = new Alert("","Bienvenido.", "success");
+        
+        if(!correo.equalsIgnoreCase("") && !contra.equalsIgnoreCase("")){
+            boolean valido = database.validarUsuario(correo, contra);
+            if(valido){
+               
                 setVisible(false);
                 Menu ventana = new Menu(this);
                 ventana.setVisible(true);
-
+                btnUsuario.setText("");
+                btnContraseña.setText("");
+                btnUsuario.requestFocus();
+                Alert alerta = new Alert("BIENVENIDO","", "success");
             }else{
-                Alert alerta = new Alert("INCORRECTO", "El Usuario O La Contraseña Son Incorrectos.", "success");
+                Alert alerta = new Alert("INCORRECTO", "El Usuario O La Contraseña Son Incorrectos.", "error");
             }
+            
         }
+        
+        
+       
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed

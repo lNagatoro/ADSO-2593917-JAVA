@@ -25,7 +25,7 @@ public class Alert extends javax.swing.JFrame {
         etqTitulo.setText(titulo);
         etqMensaje.setText(mensaje);
         setLocationRelativeTo(null);
-        setIconImage( getToolkit().createImage( ClassLoader.getSystemResource("imagenes/icono_almacenes.png") ) );
+        setIconImage( getToolkit().createImage( ClassLoader.getSystemResource("imagenes/fondeiro.jpg") ) );
         setTitle("Alerta");
         setVisible(true);
         
@@ -46,11 +46,15 @@ public class Alert extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        etqImagen.setBackground(new java.awt.Color(0, 0, 0));
+        etqImagen.setForeground(new java.awt.Color(255, 255, 255));
         etqImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etqImagen.setOpaque(true);
         getContentPane().add(etqImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 6, 58, 56));
 
+        etqMensaje.setBackground(new java.awt.Color(0, 0, 0));
         etqMensaje.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        etqMensaje.setForeground(new java.awt.Color(255, 255, 255));
         etqMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etqMensaje.setText("XXXXXXXXXXXXxxx");
         etqMensaje.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -69,7 +73,9 @@ public class Alert extends javax.swing.JFrame {
         });
         getContentPane().add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 68, 95, 35));
 
+        etqTitulo.setBackground(new java.awt.Color(0, 0, 0));
         etqTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        etqTitulo.setForeground(new java.awt.Color(255, 255, 255));
         etqTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etqTitulo.setText("XXXXXx");
         etqTitulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -77,7 +83,7 @@ public class Alert extends javax.swing.JFrame {
         getContentPane().add(etqTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 6, 213, 25));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondeiro.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 110));
 
         pack();

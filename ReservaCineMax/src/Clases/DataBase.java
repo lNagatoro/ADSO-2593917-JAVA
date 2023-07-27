@@ -289,4 +289,20 @@ public class DataBase {
             return temp;
         }
     }
+    
+    public boolean validarUsuario(String correo,String contra){
+        boolean temp = false;
+        try{
+            ResultSet registros = this.manipularDB.executeQuery("SELECT * FROM usuarios WHERE correo='"+correo+"' AND contra = '"+contra+"' " );
+            registros.next();
+            if (registros.getRow()==1) {
+                temp =true;
+            }
+            return temp;
+        }catch(SQLException e){
+            System.out.println("Error en SELECT: "+e.getMessage());
+            return temp;
+        }
+    }
+    
 }
