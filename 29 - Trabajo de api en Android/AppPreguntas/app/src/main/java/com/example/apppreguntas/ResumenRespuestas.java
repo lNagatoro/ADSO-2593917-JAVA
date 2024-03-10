@@ -126,6 +126,7 @@ public class ResumenRespuestas extends AppCompatActivity {
                 } else {
                     cont_error += 1;
                 }
+
                 String cant_ok = String.valueOf(cont_ok);
                 String cant_error = String.valueOf(cont_error);
                 correctas.setText(cant_ok);

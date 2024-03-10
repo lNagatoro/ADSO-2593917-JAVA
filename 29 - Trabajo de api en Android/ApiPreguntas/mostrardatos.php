@@ -70,7 +70,7 @@
                 "message" => "Error en la consulta: " . $e->getMessage()
             ]);
         }
-    }else {
+    }   else {
         $respuesta = [
                         "status" => false,
                         "message" => "ERROR##DATOS##POST"

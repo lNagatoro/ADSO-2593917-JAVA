@@ -134,15 +134,8 @@ public class Resumen extends AppCompatActivity {
                 textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String id = "valor_id";
-                        String fecha_inicio = "valor_fecha_inicio";
-                        String cant_preguntas = "valor_cant_preguntas";
                         Intent intent = new Intent(getApplicationContext(), ResumenRespuestas.class);
-                        intent.putExtra("id", id);
-                        intent.putExtra("fecha_inicio", fecha_inicio);
-                        intent.putExtra("cant_preguntas", cant_preguntas);
                         startActivity(intent);
-
                         finish();
                     }
                 });
